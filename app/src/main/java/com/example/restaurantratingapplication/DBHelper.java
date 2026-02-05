@@ -8,15 +8,15 @@ import android.util.Log;
 public class DBHelper extends SQLiteOpenHelper {
 
         private static final String DATABASE_NAME = "myRestaurants.db";
-        private static final int DATABASE_VERSION = 1;
+        private static final int DATABASE_VERSION = 2;
         private static final String CREATE_TABLE_RESTAURANT =
                 "create table restaurant (restaurantID integer primary key autoincrement,"
-                        + "restName text not null, strAddress text, "
-                        + "city text, state text, zipCode text);";
+                        + "editTextRestNameID text not null, editTextStrAddress text, "
+                        + "editTextCityAddress text, editTextStateAddress text, editTextZipAddress text);";
         private static final String CREATE_TABLE_DISH =
             "create table dish (dishID integer primary key autoincrement,"
-                    + "dishName text not null, dishType text, "
-                    + "rating REAL, restaurantID int,"
+                    + "editTextDishNameID text not null, editTextDishTypeID text, "
+                    + "ratingViewID REAL, restaurantID int,"
                     +  "FOREIGN KEY(restaurantID) REFERENCES restaurant(restaurantID));";
 
         public DBHelper(Context context) {
